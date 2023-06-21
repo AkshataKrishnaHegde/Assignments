@@ -1,0 +1,48 @@
+1)Default value of array for
+   *Integer => 0
+   *Byte    => 0
+   *doluble => 0.0
+   *Boolean =>false
+   *String  =>null
+   *Float   =>0.0
+   *char    =>'\u0000'
+2)No. We cannot pass negative number in Array size. It will give NegativeArraySizeException.
+As per convention of array declaration it is mandatory that each time an array is evaluated it shall have a size greater than 0. declaring array size negative breaks this shall condition.
+
+3)In JVM Memory Arrays are stored in heap area.
+In Java reference types are stored in heap area. As Array is a reference type it is stored in heap area.
+
+4)Disadvantages of Arrays are:
+  I)Once we create the size, it cannot be   increased or decreased.
+II) It stores only homogenous data elements.
+
+5)  An Array without a name is an Anonymous array in java.
+Ex:
+class cls {
+    public int add(int arr[])
+    {
+        int result = 0;
+        for( int n: arr){
+            result = result + n;
+        }
+        return result;
+    }
+}
+public class Array_4_Anonymous_Array {
+    public static void main(String[] args) {
+        cls obj = new cls();
+        //Anonymous Array
+        int result = obj.add(new int[]{1,9,5});
+        System.out.println(result);
+
+
+    }
+
+}
+6)The different ways of traversing arrays are:
+  *Using Enhanced for loop
+  *Using for loop
+  *while loop
+  *do-while loop
+7)length => it is property of array type class.
+  length() => It is the method of string class.
