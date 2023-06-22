@@ -1,0 +1,26 @@
+1) String refers to collection of characters. String is an object in java present in package called java.lang.String
+
+2)There are types of strings in java :
+ I)Muatable String =>Changable in nature
+   Ex:String
+ II)Immutable String => non-Changable in nature
+   Ex:StringBuffer, StringBuilder
+3)In 3 ways we can create string objects in java.
+  I)Assigning a string value wrapped in "" to String type variable.
+   String variable_name = "Data";
+ II)Creating a object of the String class using the new keyword by passing the string value as parameter of its constructer.
+   String vaeiable_name = new String("Data");
+III)Passing Character array to String constructor.
+   char var_name = {'G','o','d'};
+   String variable_name = new String(var_name);
+
+4)The SCP which is abbreviated as String Constant Pool is a special memory area which in heap area. When we decalre string literal, JVM creates an object in the pool and stores its reference on stack.
+
+5)Muatable String =>changable in nature.
+The mutable strings can be changes to any value or state without adding a new object.
+   Ex:String
+ II)Immutable String =>non-Changable in nature
+Immutable string cannot be changed to its value or state once it is created.   
+Ex:StringBuffer, StringBuilder
+
+6)In Heap memory SCP is located.
