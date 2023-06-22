@@ -1,0 +1,104 @@
+1)import java.util.Scanner;
+
+public class Taking_inputinstrings {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter your name");
+        String name = sc.next();
+
+        System.out.println("your name is : " +name);
+
+    }
+
+}
+2)We can contenate strings either by using concat() method or using '+' operator.
+For Ex:
+public class Practice_1 {
+    public static void main(String[] args) {
+        //concatenation using concat()
+        String a = "My";
+        System.out.println(a); //before concatenation
+        String b ="Nation";
+        a=a.concat(b);
+        System.out.println(a);//after concatenation
+
+        //concatenation using '+'
+        String str1 = "Thank";
+        String str2 = str1 + "You";
+        System.out.println(str2);
+
+    }
+}
+3)We can find length of a string by using the method length().
+Ex:
+public class Practice_1 {
+    public static void main(String[] args) {
+        String str = "India";
+        System.out.println(str.length());
+        String str1 = new String("Indian");
+        System.out.println(str1.length());
+    }
+}
+
+4)Two Strings can be compared either by using '==' operator or equals() method.
+== operator compares reference of the object where as equals() method compares contents of the 2 objects.
+For Ex:
+public class Practice_1 {
+    public static void main(String[] args) {
+        String str1="Country";
+        String str2="Country";
+        String str3= new String("Country");
+        String str4 = new String("State");
+
+        System.out.println(str1==str2); //true
+        System.out.println(str1==str3);//false
+        System.out.println(str3==str4);//false
+
+        System.out.println(str1.equals(str2));//true
+        System.out.println(str1.equals(str3));//true
+        System.out.println(str3.equals(str4));//false
+
+    }
+}
+5)
+public class Practice_1 {
+    public static void main(String[] args) {
+        String str = "refrigerator";
+        System.out.println(str.length());
+
+    }
+}
+6)public class Practice_1 {
+    public static void main(String[] args) {
+        int flag=0;
+        String str = "Umbrella";
+        char arr[] = str.toCharArray();
+        for(int i=0; i<arr.length;i++){
+            if(arr[i]=='e') {
+                System.out.println("e is found");
+                flag++;
+                break;
+            }
+        }
+        if(flag == 0)
+        {
+            System.out.println("e is not found");
+        }
+    }
+}
+7)
+public class Practice_2 {
+    public static void main(String[] args) {
+        String str = "Hello, have a good day";
+        System.out.println(Replace.remCons(str));
+
+
+    }
+
+    class Replace {
+        static String remCons(String str) {
+            return str.replaceAll("[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]", "");
+        }
+    }
+}
