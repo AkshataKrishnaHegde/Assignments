@@ -1,0 +1,268 @@
+1)
+import java.util.Arrays;
+
+public class Practice_4 {
+    public static void main(String[] args) {
+        char str[]="butterfly".toCharArray();
+        int n= str.length;
+        System.out.println(Duplicate.removeDuplicate(str,n));
+    }
+    class Duplicate{
+        static String removeDuplicate(char str[],int n)
+        {
+            int index =0;
+            for(int i=0;i<n;i++){
+                int j=0;
+                for( j=0;j<i;j++){
+                    if(str[i]==str[j]){
+                        break;
+                    }
+                }
+                if(j==i)
+                {
+                    str[index++]=str[i];
+                }
+            }
+            return String.valueOf(Arrays.copyOf(str,index));
+        }
+    }
+
+}
+2)
+public class Practice_5 {
+    public static void main(String[] args) {
+                String string1 = "Butterfly";
+                int count;
+                char string[] = string1.toCharArray();
+
+                System.out.println("Duplicate characters in a given string: ");
+                for(int i = 0; i <string.length; i++) {
+                    count = 1;
+                    for(int j = i+1; j <string.length; j++) {
+                        if(string[i] == string[j] && string[i] != ' ') {
+                            count++;
+                            string[j] = '0';
+                        }
+                    }
+                    if(count > 1 && string[i] != '0')
+                        System.out.println(string[i]);
+                }
+            }
+        }
+3)
+public class Practice_6 {
+    public static void main(String[] args) {
+        int flag=0;
+
+        String str = "2552";
+        char s[] = str.toCharArray();
+        String str2="";
+        for (int i = str.length()-1; i>=0;i--) {
+            str2=str2+str.charAt(i);
+        }
+        char s2[]=str2.toCharArray();
+        for(int i=0;i<str.length();i++){
+                if(s[i]!=s2[i]){
+                    flag++;
+                }
+        }
+        if(flag==0){
+            System.out.println("It is a palindrome");
+
+        }
+        else{
+            System.out.println("It is not a palindrome");
+        }
+
+
+    }
+}
+4)
+{
+    public static void main(String[] args) {
+        String str ="@India";
+        char c[]=str.toCharArray();
+        char vowels[]=new char[10];
+        char cons[]=new char[10];
+        char ch[]=new char[10];
+        int n=0;
+        int m=0;
+        int j=0;
+        for(int i=0; i<str.length();i++){
+
+            if((c[i]>='a'&& c[i]<='z')||(c[i]>='A'&& c[i]<='Z'))
+            {
+                if(c[i]=='a'||c[i]=='e'||c[i]=='i'||c[i]=='o'||c[i]=='u'){
+                    vowels[n++]=c[i];
+                }
+                else {
+                    cons[m++] = c[i];
+                }
+            }
+            else
+            {
+                ch[j++]=c[i];
+            }
+        }
+        System.out.println("vowels in the string are");
+        for(int i=0;i<n;i++){
+            System.out.println(vowels[i]);
+        }
+        System.out.println("consonants in the string are");
+        for(int i=0;i<m;i++){
+            System.out.println(cons[i]);
+        }
+        System.out.println("Special characters in the string are");
+        for(int i=0;i<j;i++){
+            System.out.println(ch[i]);
+        }
+5)
+public class Practice_8 {
+    public static void main(String[] args) {
+        int flag=0;
+        String s1 = "A Gentleman";
+        String s2 = "Elegant Man";
+        char c1[]=s1.toCharArray();
+        char c2[]=s2.toCharArray();
+        char ch;
+        s1=s1.replace(" ","");
+        s2=s2.replace(" ","");
+        for(int i=0;i<c1.length;i++){
+            if(c1[i]>='a' && c1[i]<='z'){
+                c1[i]=(char)((int)c1[i]-32);
+            }
+            for(int j=0;j<c1.length-1;j++){
+                if((char)((int)c1[j+1])<(char)((int)c1[j]))
+                {
+                    ch=c1[j];
+                    c1[j]=c1[j+1];
+                    c1[j+1]=ch;
+                }
+            }
+        }
+        for(int i=0;i<c2.length;i++) {
+            if (c2[i] >= 'a' && c2[i] <= 'z') {
+                c2[i] = (char) ((int) c2[i] - 32);
+            }
+            for (int j = 0; j < c2.length-1; j++) {
+                if ((char) ((int) c2[j]) > (char) ((int) c2[j + 1])) {
+                    ch = c2[j];
+                    c2[j] = c2[j + 1];
+                    c2[j + 1] = ch;
+                }
+            }
+        }
+        for(int i=0;i<c1.length;i++){
+            if(c1[i]!=c2[i]){
+                flag=1;
+                break;
+            }
+        }
+        if(flag!=0){
+            System.out.println("It is not a Anagram");
+        }
+        else{
+            System.out.println("It is Anagram");
+        }
+
+
+    }
+}
+6)
+public class Practice_9 {
+    public static void main(String[] args) {
+
+
+        String s1 = "We promptly judged antique ivory buckles for the next prize";
+        s1=s1.replace(" ","");
+        char c1[] = s1.toCharArray();
+        char arr[]=new char[26];
+        char ch;
+        Boolean flag= false;
+
+        for(int i=0; i<c1.length;i++){
+            if (c1[i]>='a' && c1[i]<='z') {
+                c1[i]=(char)((int)c1[i]-32);
+            }
+        }
+        for(int i=0;i<c1.length;i++){
+            for(int j=0; j<c1.length-1;j++){
+                if((char)((int)c1[j])>(char)((int)c1[j+1])){
+                    ch=c1[j];
+                    c1[j]=c1[j+1];
+                    c1[j+1]=ch;
+                }
+            }
+        }
+        for(int i =0; i<c1.length; i++)
+        {
+            arr[c1[i]-65]++;
+        }
+        for(int i =0; i<arr.length;i++){
+            if(arr[i]==0)
+            {
+                System.out.println("it is not pangram");
+                flag=true;
+                break;
+            }
+        }
+        if(flag==false)
+        {
+            System.out.println("It is pangram");
+        }
+
+
+    }
+}
+7)
+public class Practice_10 {
+    public static void main(String[] args) {
+        String s = "abc1c2";
+        Check obj = new Check();
+        if (obj.uniqueCharacters(s)) {
+            System.out.println("The given string contains all unique characters");
+        } else {
+            System.out.println("The given string contains duplicate characters also");
+        }
+
+    }
+}
+    class Check {
+    boolean uniqueCharacters(String s){
+            for(int i=0;i<s.length();i++)
+                for(int j=i+1;j<s.length();j++)
+                    if(s.charAt(i)==s.charAt(j))
+                        return false;
+            return true;
+        }
+    }
+
+8)
+public class Practice11 {
+    public static void main(String[] args) {
+        String s="Believe in god";
+        System.out.println("Maximum occurring character is " + Program.getMaxOccurringChar(s));
+
+    }
+    class Program{
+        static final int ASCII_SIZE =256;
+        static char getMaxOccurringChar(String s){
+            int arr[]=new int[ASCII_SIZE];
+            for(int i=0;i<s.length();i++){
+                arr[s.charAt(i)]++;
+            }
+            int max=-1;
+            char res=' ';
+            for(int i=0;i<s.length();i++){
+                if(max<arr[s.charAt(i)]){
+                    max=arr[s.charAt(i)];
+                    res=s.charAt(i);
+                }
+            }
+            return res;
+        }
+    }
+}
+
+
+
