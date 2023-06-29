@@ -1,0 +1,90 @@
+1)Binding of data and corresponding units is called "Encapsulation".
+Encapsulation=Data Hiding+Data Abstraction
+Encapsulation helps in providing controlled access for our data so it is called datahiding.
+
+2)
+Features of Encapsulation are:
+*Combines the data of our application and its manipulation at one place.
+*It allows the state of an objcet to be accessedand modified through behaviours.
+*Reduce coupling of modules and increase the cohesion inside them.
+3)
+Setters =>
+Used to set value to the instance variables of the class java.
+Ex:public void setAge(int age)
+{
+   this.age=age;
+}
+getters =>
+Used to get value from the instance variable of class.
+Ex:
+public int getAge()
+{
+return age;
+}
+4)
+If both local variable and instance variable have the same name inside the method then it would result in a name clash and jvm will always give preference to local variable, this is called shadowing problem. And this shadowing problem can be solved using this keyword.
+For Ex:
+class data{
+    private int age;
+    private String name;
+    public void setAge(int age)
+    {
+        this.age=age;
+    }
+    public int getAge()
+    {
+        return age;
+    }
+    public void setName(String name)
+    {
+        this.name=name;
+    }
+    public String getName()
+    {
+        return name;
+
+    }
+    public void show()
+    {
+        System.out.println(age + " " + name);
+    }
+ }
+public class setters_and_getters {
+    public static void main(String[] args) {
+        data obj = new data();
+        data obj1=new data();
+        obj.setAge(18);
+        obj1.setAge(25);
+        obj.setName("navin");
+        obj1.setName("kiran");
+        int stud1Age = obj.getAge();
+    }
+}
+5)Advantages of Encapsulation are :
+*Protects your Data
+With Encapsulation, you can keep your data and codes safe from external inheritance.
+*Easy to Test code
+The code which is encapsulated is simple to debug and easy to test for unit testing.
+*Flexibility
+The encapsulated code is cleaner,flexible and easy to change as per our needs.
+*Easy to Reuse
+Encapsulation enables you to easily change the methods, reuse and code, and execute new requirements in your program.
+
+6)In Java, encapsulation is achieved by declaring the instance variables of a class as private, which means they can only be accessed within the class.To allow outside access to instance variables, public methods called getters and setters are defined, which are used to retrieve and modify the values of the instance variables respectively.
+Ex:
+class Person {
+    private String name;
+    private int age;
+    public String getName(){return name;}
+    public void setName(String name){this.name=name;}
+}
+
+public class Practice_12 {
+    public static void main(String[] args) {
+        Person p =new Person();
+        p.setName("Anjaneya");
+        System.out.println("Name: " + p.getName());
+
+    }
+}
+ 
