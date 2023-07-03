@@ -1,0 +1,74 @@
+1)Inheritance is a process where child class acquires the behaviour and properties of parent class.Every method present inside the interface is always public and abstract whether we declare or not.
+
+2)A Superclass, which is also called as parent class is class where a subclass inherits features.
+A Subclas, which can be also called as child class or derived class is a class which inherits all the members like methods,fields and nested classes from another class.
+
+3)Inheritance can be achieved in java either by using the keyword extends or by using the keyword implements.
+implements=> used for developing the inheritance between a class and interface.
+extends=> used for developing the inheritance between two classes and two interfaces.
+
+4)In the word polymorphism, poly means many and morphism means structure or forms. Polymorphism encourages extensibility. If one thing exists in more than one form then it is called polymorphism.
+There are two types of polymorphism:
+*Static polymorphsim
+*Dynamic Polymophism
+
+5)Method Overloading:
+*Method Overloading is a feature that allows a class to have more than one method with the same name, but with different parameters.
+*method call is determined at compile time.
+*Implements compile time polymorphism.
+*Occurs betwwen methods in the same class.
+*If there is any error, it can be caught at compile time.
+Method Overriding:
+*The process of replacing the existing method functionality with new functionality is called Method Overriding.
+*method call is determined at runtime 
+*Occurs between superclass and subclass.
+*If there is any error, it's effect will be visible at runtime.
+
+6)Abstraction is the process of hiding certain details from user and showing only essential information.
+Ex:
+abstract class AeroPlane
+{
+    abstract public void takeoff();
+    abstract public void fly();
+
+    public void landing()
+    {
+        System.out.println("Aeroplane is landing in Manglore");
+    }
+}
+7)The difference between abstract method and final method is, the abstract method is incomplete while the final method is regarded as complete. The only way to use
+an abstract method is by overriding it, but you cannot override a final method in Java.
+
+8)Final class is a class which will not participate in inheritance. If we try to inherit final class we will get compile time error.
+
+9)Abstraction:
+*Abstraction is the process of hiding certain details from user and showing only essential information.
+*It solves an issue at design level.
+*Process of gaining information.
+*The objects are encapsulated that helps to perform abstraction.
+Encapsulation:
+Binding of data and corresponding units is called "Encapsulation".
+Encapsulation=Data Hiding+Data Abstraction
+Encapsulation helps in providing controlled access for our data so it is called datahiding.
+*It solves an issue at implementation level.
+*Process of conating the information.
+*The object need not to be abstract that result in encapsulation.
+
+10)Compile Time Polymorphism:
+*It is less flexible in nature.
+*Inheritance is not involoved.
+*the call is resolved by the compiler.
+*All things execute at compile time.
+*provied fast execution.
+*It is also known as static binding,Overloading,Early-binding as well.
+*method overloading is compile time polymorphism. Method Overloading is a feature that allows a class to have more than one method with the same name, but with different parameters.
+
+Run Time Polymorphism:
+*more flexible.
+*Inheritance is involoved.
+*the call is not resolved by the computer.
+*All things execute at runtime.
+*Provies slow execution in comaparision with compile time polymorphism.
+*Also known as dynamic binding,late binding,and overriding as well.
+*Method Overriding is a runtime polymorphism.
+*It is the process of replacing the existing method functionality with new functionality.
