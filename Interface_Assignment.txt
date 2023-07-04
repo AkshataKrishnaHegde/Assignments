@@ -1,0 +1,41 @@
+1)An interface is a mechanism that is used to achieve complete abstraction.Interface cannot be instantiated. It is basically a kind of class that contains only constants and abstract methods.
+
+2)The modifiers which are allowed for methods  in interfaces are public and abstract.
+
+3)Uses of interface in Java:
+*Inheritance can be used to achieve the functionality of multiple inheritance.
+*It can be used to achieve full abstraction.
+*Using interfaces is the best way to expose our project’s API to some other project.
+*Programmers use interfaces to customise features of software differently for different objects.
+*Usefull in capturing similarities among unrealted classes without artificially forcing a class relationship.
+*usefull in declaring methods that one or more classes can implement.
+
+4)
+Abstarct class:
+*It can extended using keyword extends.
+*Abstract class can have abstract and non-abstract methods.
+*abstract keyword is used to declare abstract class.
+*It doesn't support muitiple inheritance.
+*Can have final,non-final,static,and non-static variables.
+*A java abstract class can have members like private,protected etc.
+*It can provide implementation of interface.
+*It can extend another java class and implement multiple java interfaces.
+Ex:
+public abstract class Animal{
+public abstarct void eat();
+}
+
+Interface:
+*It can implemented using keyword implements.
+*It can have only abstarct methods. Since java8, it can have static and default methods.
+*Interface keyword is used to declare the interface.
+*Supports multiple inheritance.
+*has only static and final variables.
+*members of java interface are public by default.
+*It cannot provide implementation of abstract class.
+*An interface can extend another java interface only.
+Ex:
+public interface Animal{
+void eat();
+}
+
