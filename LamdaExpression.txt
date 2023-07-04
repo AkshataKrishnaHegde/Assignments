@@ -1,0 +1,16 @@
+1)Lamda expression is a short block of code which takes in parameters  and returns a value.
+Lamda expressions are similar to methods,but they do not need a name and they can be implemented right in the body of a method.
+
+2)Yes, we can pass a lambda expression to a method provided it is expecting a functional interface. For example, if a method is accepting a Runnable, Comparable or Comparator then you can pass a lambda expression to it because all these are functional interfaces in Java 8.
+
+3)A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface. A functional interface can have any number of default methods.
+
+4)Lamda expression is used :
+*To provide the implementation of Functional Interface.
+*It reduces the size of the code.
+*It's easier to pass a code block to a method using Lamda expression.
+
+5)No, it's not mandatory for a lambda expression to have parameters, you can define a lambda expression without parameters. 
+Syntax for no parameter lamda expression is:
+() -> {//body
+}
