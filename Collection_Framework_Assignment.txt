@@ -1,0 +1,70 @@
+1)In java, Collection framework is a set of classess and interfaces that implement commonly reusable collection data structures. They are dynamic in nature.
+
+2)ArrayList:
+*The ArrayList class implements List interface.
+*Uses dynamic array to store the duplicate element of different datatypes.
+*Maintains insertion order and it is non-synchronised.
+*The elemnts stored in Array list can be randomly accessed.
+Linked list:
+*Implements List interface and Deque interface.
+*It uses doubly linked list internaly to store the elements.
+*It can store duplicate elements.
+*Maintains insertion order and non-synchronised.
+*data manipulation is fast as no shifting required.
+
+3) 
+*Iterator can traverse only in one direction where as Listiterator traverses both in forward and backward directions.
+*Iterator helps to traverse Map,List and Set.
+Where as List Iterator can traverse only List. 
+*Indexes cannot be obtained by using interator.
+Whereas List Iterator has some methods to obtain  indexes of elements at any time while traversing List.
+*By using Iterator we Cannot add elements if we do so it throws ConcurrentModificationException.
+Where as by using List Iterator we can add elements.
+*We cannot modify or replace elements present in collection using iterator. Whereas by using ListIterator we can modify or replace elements.
+
+4)
+List:
+*List Interface is an ordered collection of values in which values amy or maynot be repeated.
+*List is an indexed sequence.
+*List allows duplicate elements.
+*Elements by their position can be accessed.
+*Multiple null elements can be stored.
+*List implementations are ArrayList, LinkedList,Vector ,Stack.
+Set:
+*The Set is an unordered collection of objects in which duplicate values cannot be stored.
+*The set is an non-indexed sequence.
+*Set doesn't allow duplicate elements.
+*Position access to elements is not allowed.
+*Null elements can be stored only once.
+*Set implementations are HashSet,LinkedHashSet etc.
+
+6)
+Hash set:
+*It is implemented using HashTable
+*HashSet allows a null object.
+*Uses equals method to compare two values.
+*Doesn't allow a heterogenous object.
+*It doen not maintain any order.
+*does not allow heterogenous object.
+
+Tree Set:
+*Implemented using tree structure.
+*doesnot allow the null object. It throws null pointer exception.
+*use compare method for comparing two objects.
+*Maintains an object in sorted order.
+*allows heterogenous objects.
+
+7)
+Arrays:
+*It can be single dimenshional or multidimenshional.
+*It is static and fixed length.
+*It is faster.
+*for and for each loops are generally used for iteration.
+*length keyword can give the total size of the array
+
+ArrayList:
+*It can only be single dimenshional.
+*It dynamic and size can be changes when required.
+*relatively slow.
+*Here Iterator is used to traverse over ArrayList.
+*size() method is used to compute the size of ArrayList.
