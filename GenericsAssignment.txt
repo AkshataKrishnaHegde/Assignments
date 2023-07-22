@@ -1,0 +1,30 @@
+1)A Map is an interface that represents a collection of key-value pairs where each key and value pairs is known as an entry. A contains unique keys.
+
+2)HashMAp,LinkedHashMap,TreeMap,ConcurrentHashMap
+are some commonly used implementations of Map in Java.
+
+3)Hash Map allows null key and null values. Where as Tree Map cannot have null key but can have multiple null values.
+Hash Map is an unordered collection where as Tree Map is sorted collection that stores key-value pairs in a sorted order.
+
+4)We can chacek whether key is present in a Map by using get() method or by using containsKey() method. The return type of containsKey() is boolean, where as get() method returns the value of the key if it present otherwise it returns null.
+
+5)Generics is a feature that allows for the creation of classes, interfaces, and methods that can operate on variety of data types. It provides compile time saftey by enabling the specification of the datatype of objects that a class or method can work with.
+
+6) Advantages of generics are :
+*Code Reusability
+*Type satey
+*Individual type casting is not required.
+*Allows to implement non-generic algorithms.
+*Improves readability of the code
+*Reduces the length of the code.
+
+7)Generics is a feature that allows for the creation of classes, interfaces, and methods that can operate on variety of data types.
+It provides compile time type saftey by enabling  
+the specifications of the data type of the objects that a class or method can work with.
+
+8)The type parameter section, delimited by  angle brackets(<>) follows the class name. It specifies the type parameter (also called as type variables) T1, T2, T3.....and Tn.
+
+9)Generic methods are those methods that introduce their return type parameters. 
+
+10)Array list<T> is using generics while other one is not.
+Array list is not type safe while Array list<T> is type safe.
