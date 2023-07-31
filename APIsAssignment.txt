@@ -1,0 +1,124 @@
+1)
+public class APIs1 {
+    public static void main(String[] args) {
+ 
+        java.util.Date dt1 = new java.util.Date();
+        System.out.println(dt1);
+  }
+}
+Output: 
+Mon Jul 31 06:16:26 IST 2023
+
+2)
+ public class APIs4 {
+    public static void main(String[] args) {
+        LocalDate dt = LocalDate.of(2023,07,31);
+        
+        DateTimeFormatter dtf =DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String fd = dt.format(dtf);
+
+        System.out.println(fd);
+
+    }
+}
+Output:
+07/31/2023
+3)
+Streams:
+*It doesn,t store data, it operates on the source data structure i.e collection.
+*They use functional interfaces like lamda which
+makes it a good fit for pragramming language.
+*Java Streams are consumable
+*Java Streams Support both sequential and parallel processing.
+*All the java Stream API interfaces and classes are in java.util.stream package.
+*Streams are not modifiable.
+*Streams are iterated internally by just mentioning the operations.
+Ex:
+public class APIs3 {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(2,8,5,9,4);
+
+        Stream<Integer> stream =list.stream();
+        Stream<Integer> finalStream = stream.filter(n->n%2==0).sorted().map(n-> n*4);
+
+        finalStream.forEach(n-> System.out.println(n));
+        //stream.forEach(n-> System.out.println(n));
+    }
+}
+
+Collections:
+*It stores all the data that data structure currently has in particular data structure like set,list, or Map.
+*They don't use functional interfaces.
+*they are consumable.
+*It supports parallel processing.
+*Specific classes for primitive types such as IntStream, LongStream, and DoubleStream are used in collections since primitive data types such as int, long in the collections using auto-boxing and these operations could take a lot of time.
+*They are modifiable.
+*Collections are iterated externally using loops.
+
+Ex:
+public class Cf1 {
+    public static void main(String[] args) {
+        ArrayList Al1 =new ArrayList();
+        Al1.add(100);
+        Al1.add(200);
+        Al1.add(500);
+        System.out.println(Al1);
+        System.out.println(Al1.contains(100));
+        int i =  Al1.indexOf(200);
+
+        System.out.println(Al1.size());
+        Al1.ensureCapacity(10);
+        Al1.trimToSize();
+        System.out.println(Al1.size());
+        Al1.clear();
+        System.out.println("index of 200 is"+i);
+        System.out.println("**************************************");
+
+        List Al = new ArrayList();
+        Al1.add(100);
+        System.out.println(Al);
+        System.out.println("******************************************");
+
+        ArrayList Al2 = new ArrayList();
+
+        Al2.add("Anjaneya");
+        Al2.add(2);
+        Al2.add("a");
+        Al2.add(2.2);
+        System.out.println(Al2);
+        System.out.println("***************************************");
+
+        ArrayList Al3 = new ArrayList();
+        Al3.add(1);
+        Al3.add(2);
+        Al3.add(3);
+        System.out.println(Al3);
+        System.out.println("******************************************");
+        Al3.addAll(Al2);
+        System.out.println(Al3);
+        Al3.add(2,"GOD"); //The data which was in index 2 will be shifted to next index, so it is not highly recommended
+//Duplicates are allowed in Array List
+    }
+}
+
+4)
+*Enum is introduced in java 1.5
+*Enum is used to define group of named constants.
+*by using enum we can define our own data types which are also callled as enumerated data types.
+Ex:
+public class Enum1{
+        enum Result
+        {
+            PASS, FAIL, NR;
+        }
+}
+5)
+Some examples of built in annotations are:
+@FunctionalInterface
+@Retention
+@Target
+@Documented
+@Inherited
+@Deprecated
+@Override
+Built-in annotations are used to provide additional information to the java compiler and other tools.Annotations help in code saftey, maintainability,code readability.
