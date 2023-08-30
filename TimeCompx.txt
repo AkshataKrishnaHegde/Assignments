@@ -1,0 +1,87 @@
+1)Time complexity is:O(n*n)
+
+2)T(n)=3T(n-1)+12n
+  T(0)=5
+  T(1)=3T(0)+12(1)
+  T(1)=3*5+12
+      =27
+  T(2)=3T(1)+12(2)
+      =3*27+24
+      =105
+3)
+T(n) = T(n - 1) + c
+T(n - 1) = T(n - 2) + c
+T(n - 2) = T(n - 3) + c
+.
+.
+.
+T(2) = T(1) + c
+ Adding all the above equations
+T(n) = T(1) + cn
+let T(1)->k (constant)
+T(n) = k + cn
+Therefore, T(n) <= cn
+Hence we can conclude T(n) = O(n).
+
+4)
+T(n)=16T(n/4)+n2logn
+here,
+k=2
+a=16
+b=4
+p=1
+bk=42=16
+Here a=bk
+Alsop>-1
+HenceT(n)=θ(nlogab*logp+1n)
+ThereforeT(n)=θ(nlog164*log1+1n)=θ(n1/2log2n)
+
+5)
+Cost of each level:
+ Cost of level-0= n
+ Cost of level-1 = n/2 + n/2 = N
+ Cost of level-2 = n/4 + n/4 + n/4 + n/4 = n
+total number of levels:
+ Size of sub problem at level-0 = n/20
+ Size of sub problem at level-1 = n/21
+ Size of sub problem at level-2 = n/22
+size of sunproblem at level-i=n/2i
+At last level(level-x),
+n/2x=1
+2x=n
+xlog2=logn
+x=log2^n
+total no of levels:log2^n+1
+cost at last level:
+nxT(1)=O(n)
+adding cost of all levels
+T(n)={n+n+n+....}+O(n)
+=n x log2n + O(n)
+=O(nlog2n)
+
+6)
+height of tree
+(n/2^k) =1
+n = 2^K
+log(n) = log(2^k)
+log(n) = klog(2)
+k = log(n)/log(2)
+k = log2^(n)
+cost at each level
+Level 0 = K
+Level 1 = K + K = 2K
+Level 2 = K + K + K + K= 4K.....
+ number of nodes at each level
+Level 0 = 2^0 = 1
+Level 1 = 2^1 = 2
+Level 2 = 2^2 = 4 and so on...
+final cost:
+Total Cost = level-0 + level-1 +  level-2 + .... + level-log(n) + Cost of last level
+ Let's take cost of last level as O(1)
+T(n) = K + 2*K + 4*K + .... + log(n) + O(1) x n
+T(n) = K(1 + 2 + 4 + .... + log(n) + O(n)
+T(n) = K(2^0 + 2^1 + 2^2 + ....+ log(n)+ O(n)
+In the above GP a = 1 and r = 2, 
+T(n) = K * (1 / (2 - 1)) + O(n)
+T(n) = K + O(n)
+T(n) = O(n)
