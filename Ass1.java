@@ -1,18 +1,49 @@
-package Ass_1D;
-
+package BackTracking;
+//Q1. Given an integer array arr and an integer k, return true if it is
+//possible to divide the vector into k non-empty subsets with equal
+//sum.
 public class Ass1 {
     public static void main(String[] args) {
-        int arr[]={3,20,4,6,9};
-        int arr2[]={4,3,6,7,1};
-        int sum1=0;
-        int sum2=0;
-        for(int i=0; i<arr.length;i=i+2){
-            sum1+=arr[i];
-        }
-        for (int i=0;i<arr2.length;i=i+2){
-            sum2+=arr2[i];
-        }
-        System.out.println("Sum of 1st input is :"+sum1); //output:16
-        System.out.println("Sum of second input is:"+sum2);//output:11
+        int arr[]={1,3,2,2};
+        int k=2;
+        System.out.println(isPartitionPossible(arr,k));
+
     }
+    public static boolean isPartitionPossible(int arr[], int k){
+        int sum=0;
+        int[] vis= new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            vis[i]=0;
+        }
+        for(int j=0; j<arr.length; j++){
+            sum+=arr[j];
+        }
+        if(sum%k!=0){
+            return false;
+        }
+        func(arr,k,vis,0,sum/k);
+        return true;
+    }
+    public static boolean func(int arr[], int k,int[] vis, int curr_Sum, int target){
+        if(k==1){
+            return true;
+        }
+        if(curr_Sum>target){
+            return false;
+        }
+        if(curr_Sum==target){
+            return func(arr,k-1,vis,0,target);
+        }
+        for(int i=0; i<arr.length; i++){
+            if(vis[i]==0){
+                vis[i]=1;
+                if(func(arr,k,vis,curr_Sum+arr[i],target)){
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
 }

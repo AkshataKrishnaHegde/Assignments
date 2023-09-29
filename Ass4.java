@@ -1,16 +1,22 @@
-package Ass_1D;
-
-import java.util.Arrays;
+package BackTracking;
 
 public class Ass4 {
     public static void main(String[] args) {
-        int arr[]={34,21,54,65,43};
-        int arr2[]={4,3,6,7,1};
+        int arr[]={8,7,5};
+        System.out.println((func(arr,0,5,1)? "Yes" :"No"));
 
-        Arrays.sort(arr);
-        Arrays.sort(arr2);
+    }
+    public static boolean func(int arr[],int i,int target, int product){
+        if(i==arr.length){
+            return (product==target);
+        }
+        boolean ans=false;
+        product*=arr[i];
+        ans |=func(arr,i+1,target,product);
+        product/=arr[i];
+       ans|= func(arr,i+1,target,product);
 
-        System.out.println("The largest element in the first array is: "+arr[arr.length-2]);
-        System.out.println("The largest element in the second array is: "+arr2[arr2.length-2]);
+        return ans;
+
     }
 }
