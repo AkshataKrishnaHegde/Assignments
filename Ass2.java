@@ -1,33 +1,24 @@
-package BackTracking;
-//Q2. Given an integer array arr, print all the possible permutations of
-//
-//the given array.
-import java.util.ArrayList;
-import java.util.List;
+package DivideAndConquer;
 
 public class Ass2 {
     public static void main(String[] args) {
-        int arr[]={1,2,3};
-        List<List<Integer>> res = new ArrayList<>();
-        List<Integer> temp=new ArrayList<>();
-        permute(res,arr,temp);
-        System.out.println(res);
-
+        int[] arr={9,20,-7,-4,13,-11,-15,3};
+        int n= arr.length;
+        partition(arr,0,n-1);
+        for (int j:arr){
+            System.out.print(j +" ");
+        }
 
     }
-    public static void permute(List<List<Integer>> res, int[] arr, List<Integer> temp){
-        if(arr.length==temp.size()){
-            res.add(new ArrayList<>(temp));
-            return;
-        }
-        for(int i=0; i<arr.length;i++){
-            if(temp.contains(arr[i])){
-                continue;
+    public static void partition(int[] arr, int s, int e){
+        int pIndex= s;
+        for (int j = s; j <= e; j++) {
+            if (arr[j] < 0) {    // pivot is 0
+                int temp = arr[j];
+                arr[j] = arr[pIndex];
+                arr[pIndex] = temp;
+                pIndex++;
             }
-            temp.add(arr[i]);
-            permute(res,arr,temp);
-            temp.remove(temp.size()-1);
         }
-
     }
 }

@@ -1,50 +1,48 @@
-package BackTracking;
-//Q4. Check if the product of some subset of an array is equal to the
-//
-//target value.
+package DivideAndConquer;
+
 public class Ass5 {
+    static class Interval {
+        int start;
+        int end;
+        public Interval(int start, int end) {
+            super();
+            this.start = start;
+            this.end = end;
+        }
+    };
     public static void main(String[] args) {
-        int n=4;
-        boolean[][] board=new boolean[n][n];
-        System.out.println(countNQueens(board,0));
+        Interval arr[]={new Interval(1,3),new Interval(7,9),new Interval(4,6),new Interval(10,13)};
+        int n=arr.length;
+        if(isIntersect(arr,n)){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("NO");
+        }
+
 
     }
-    public static int countNQueens(boolean[][] board,int row){
-
-        if(row==board.length){
-            return 1;
-        }
-        int count=0;
-        for(int c=0; c<board[0].length;c++){
-            if(isSafe(board,row,c)){
-                board[row][c]=true;
-                count+=countNQueens(board,row+1);
-                board[row][c]=false;
+    public static boolean isIntersect(Interval arr[],int n){
+        int maxEle=0;
+        for (int i=0; i<n;i++){
+            if(arr[i].end>maxEle){
+                maxEle=arr[i].end;
             }
         }
-        return count;
+        int[] array=new int[maxEle+1];
+        for(int i=0; i<n;i++){
+            int x=arr[i].start;
+            int y=arr[i].end;
+            array[x]++;
+            array[y]--;
+        }
+        for(int i=1; i<=maxEle;i++){
+            array[i]=array[i-1];
+            if(array[i]>1){
+                return true;
+            }
+        }
+        return false;
     }
-    public static boolean isSafe(boolean[][] board, int row,int column){
-        for(int i=0;i<row;i++){
-            if (board[i][column]){
-                return false;
-            }
-        }
-        int maxLeft=Math.min(row,column);
-        for(int i=1; i<=maxLeft; i++){
-            if(board[row-i][column-i]){
-                return false;
-            }
-        }
-        int maxRight=Math.min(row,board[0].length-1-column);
-        for(int i=1; i<=maxRight; i++){
-                if(board[row-i][column+i]){
-                    return false;
-                }
-
-        }
-        return true;
-
-    }
-
+    
 }

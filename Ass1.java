@@ -1,49 +1,23 @@
-package BackTracking;
-//Q1. Given an integer array arr and an integer k, return true if it is
-//possible to divide the vector into k non-empty subsets with equal
-//sum.
+package DivideAndConquer;
+//Q1. Given an array where all its elements are sorted in increasing order except two swapped elements, sort it
+//in linear time. Assume there are no duplicates in the array.
 public class Ass1 {
     public static void main(String[] args) {
-        int arr[]={1,3,2,2};
-        int k=2;
-        System.out.println(isPartitionPossible(arr,k));
-
-    }
-    public static boolean isPartitionPossible(int arr[], int k){
-        int sum=0;
-        int[] vis= new int[arr.length];
-        for(int i=0;i<arr.length;i++){
-            vis[i]=0;
-        }
-        for(int j=0; j<arr.length; j++){
-            sum+=arr[j];
-        }
-        if(sum%k!=0){
-            return false;
-        }
-        func(arr,k,vis,0,sum/k);
-        return true;
-    }
-    public static boolean func(int arr[], int k,int[] vis, int curr_Sum, int target){
-        if(k==1){
-            return true;
-        }
-        if(curr_Sum>target){
-            return false;
-        }
-        if(curr_Sum==target){
-            return func(arr,k-1,vis,0,target);
-        }
-        for(int i=0; i<arr.length; i++){
-            if(vis[i]==0){
-                vis[i]=1;
-                if(func(arr,k,vis,curr_Sum+arr[i],target)){
-                    return true;
-                }
+        int[] arr={1,4,7,6,8};
+        int i=-1; int j=-1;
+        int prev=arr[0];
+        for(int r=1; r<arr.length;r++){
+            if(arr[r]<prev){
+                int temp=arr[r];
+                arr[r]=prev;
+                arr[r-1]=temp;
             }
+            prev=arr[r];
         }
-        return false;
 
+        for (int n:arr){
+            System.out.print(n + " ");
+        }
     }
 
 }
