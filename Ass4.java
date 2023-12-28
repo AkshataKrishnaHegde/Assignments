@@ -1,36 +1,43 @@
-package DivideAndConquer;
+package Trees;
 
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 
-//Q4. Given two arrays of equal size n and an integer k. The task is to permute both arrays such that
-  //      the sum of their corresponding element is greater than or equal to k i.e a[i] + b[i] >= k. The task is
-    //    to print “Yes” if any such permutation exists, otherwise print “No”.
-public class Ass4 {
-    public static void main(String[] args) {
-        int a[]={2,1,3};
-        Integer b[]={7, 8, 9};
-        int k=10;
-        if(isPos(a,b,k)){
-            System.out.println("YES");
-        }
-        else {
-            System.out.println("NO");
-        }
-
-
+class Node4{
+    int key;
+    Node4 left=null, right=null;
+    Node4(int data){
+        this.key=data;
     }
-    public static boolean isPos(int a[], Integer b[],int k){
-        Arrays.sort(b, Collections.reverseOrder());
-        Arrays.sort(a);
-        int n=b.length;
-        for (int i=0; i<n; i++){
-            if(a[i]+b[i]<k){
-                return false;
-            }
+}
+public class Ass4 {
+    public static List<Integer> leftSideView(Node4 root){
+        List<Integer> res=new ArrayList<>();
+        leftView(root,res,0);
+        return res;
+    }
+    public static void leftView(Node4 curr,List<Integer> res,int currDepth){
+        if(curr==null){
+            return;
         }
-        return true;
+        if(currDepth==res.size()){
 
+            res.add(curr.key);
+        }
+        leftView(curr.left,res,currDepth+1);
+        leftView(curr.right,res,currDepth+1);
+    }
+
+    public static void main(String[] args) {
+        Node4 root=new Node4(1);
+        root.left=new Node4(2);
+        root.right=new Node4(3);
+        root.right.right=new Node4(6);
+        root.right.left=new Node4(5);
+        root.right.left.left=new Node4(7);
+        root.right.left.right=new Node4(8);
+        List<Integer> res=leftSideView(root);
+        System.out.println(res);
     }
 
 }

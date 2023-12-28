@@ -1,56 +1,50 @@
-package DivideAndConquer;
+package Trees;
 
-public class Ass3 {
-    public static void main(String[] args) {
-        int[] num={19,-20,7,-4,-13,11,-5,3};
-        int n= num.length;
-        int[] temp=new int[n];
-        for (int i = 0; i < n; i++) {
-            temp[i] = num[i];
-        }
-        partition(num,temp,0,n-1);
-        for (int i=0; i<n; i++){
-            System.out.print(num[i] + " ");
-        }
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Queue;
 
-        
+class Node3{
+    int key;
+    Node3 left=null,right=null;
+    Node3(int key){
+        this.key=key;
     }
-    public static void partition(int[] arr,int[] temp, int l,int h ){
-        if(h<=l){
+}
+public class Ass3 {
+    public static void reverseOrderTraversal(Node3 root){
+        if(root==null){
             return;
         }
-        int mid=(l+((h-l)>>1));
-        partition(arr,temp,l,mid);
-        partition(arr,temp,mid+1,h);
-
-        merge(arr,temp,l,h,mid);
-
+        Queue<Node3> q=new ArrayDeque<>();
+        q.add(root);
+        Deque<Integer> stack=new ArrayDeque<>();
+        Node3 curr;
+        while (!q.isEmpty()){
+            curr=q.poll();
+            stack.push(curr.key);
+            if(curr.right!=null){
+                q.add(curr.right);
+            }
+            if(curr.left!=null){
+                q.add(curr.left);
+            }
+        }
+        while(!stack.isEmpty()){
+            System.out.print(stack.poll()+" ");
+        }
     }
-    public static void merge(int[] arr, int[] temp, int l ,int h, int mid){
-        int k=l;
-        for(int i=l; i<=mid; i++){
-            if(arr[i]<0){
-                temp[k++]=arr[i];
-            }
-        }
-        for (int i=mid+1; i<=h; i++){
-            if(arr[i]<0){
-                temp[k++]=arr[i];
-            }
-        }
-        for(int i=l; i<=mid; i++){
-            if(arr[i]>=0){
-                temp[k++]=arr[i];
-            }
-        }
-        for (int i=mid+1; i<=h; i++){
-            if(arr[i]>=0){
-                temp[k++]=arr[i];
-            }
-        }
-        for (int i=l; i<=h;i++){
-            arr[i]=temp[i];
-        }
+
+    public static void main(String[] args) {
+        Node3 root = new Node3(1);
+        root.left = new Node3(2);
+        root.right = new Node3(3);
+        root.left.left = new Node3(4);
+        root.right.left = new Node3(5);
+        root.right.right = new Node3(6);
+        root.right.left.left=new Node3(7);
+        root.right.left.right=new Node3(8);
+        reverseOrderTraversal(root);
     }
 
 }
